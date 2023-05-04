@@ -1,22 +1,13 @@
-#!groovy
-
-node {
-	   
-	stage('Checkout'){
-
-          checkout scm
-       }
-
-       stage('BuildArtifact'){
-
-         // bat 'mvn install'
-	       
-	       sh 'mvn clean install'
-       }
-	   
-                
-      stage('Snyk Test') {
-            stage {
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+        steps {
+            echo "Maven_web_project"
+        }
+    }
+    stage('Snyk Test') {
+            steps {
                 echo 'Snyk Testing...'
                 snykSecurity (
                     projectName: 'snyk_security_tool', 
@@ -27,4 +18,6 @@ node {
                 )
             }
         }
+
+  }
 }
