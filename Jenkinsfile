@@ -14,7 +14,7 @@ node {
 	       sh 'mvn clean install'
        }
 	   
-                }
+                
       stage('Snyk Test') {
             stage {
                 echo 'Snyk Testing...'
@@ -27,5 +27,4 @@ node {
                 )
             }
         }
-       
 }
