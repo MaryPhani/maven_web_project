@@ -14,12 +14,9 @@ node {
 	       sh 'mvn clean install'
        }
 	   
-      stage('Sonar') {
-                    //add stage sonar
-                   // sh 'mvn sonar:sonar'
                 }
       stage('Snyk Test') {
-            steps {
+            stage {
                 echo 'Snyk Testing...'
                 snykSecurity (
                     projectName: 'snyk_security_tool', 
