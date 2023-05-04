@@ -82,7 +82,7 @@
 	<distributionManagement>
 	    <repository>
 
-	    </snapshotRepository>
+	    </repository>
 	</distributionManagement>
 	
 	
